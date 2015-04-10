@@ -10,7 +10,7 @@ public final class NmsUtil
   private NmsUtil() {}
 
   static
-  { String version = Bukkit.getServer().getClass().getPackage().getName().split(".")[3];
+  { String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
     try
     { nms = (NmsInterface)Class.forName("com.mandarinacorp.snowarrows.nms.NMS_" + version).newInstance();
     }
