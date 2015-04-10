@@ -1,0 +1,17 @@
+name: SnowArrows
+main: com.mandarinacorp.snowarrows.SnowArrows
+version: insert.version.here
+author: Konato_K
+description: Replaces the minecraft boring arrows with snowballs
+
+commands:
+  snowarrows:
+    description: Main command for SnowArrows
+    usage: /snowarrows [toggle]
+    permission: snowarrows.command.main
+    permission-message: You don't have permission
+
+permissions:
+  snowarrows.command.main:
+    description: Main command for SnowArrows
+    default: op
