@@ -1,5 +1,7 @@
 package com.mandarinacorp.snowarrows;
 
+import com.mandarinacorp.snowarrows.nms.NmsUtil;
+
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.metadata.FixedMetadataValue;
 
@@ -44,7 +46,7 @@ public final class ProjectileListener implements Listener
       e.setProjectile(snowball);
       //Attach the data that snowballs can't have so we can use it later
       snowball.setMetadata("knockback", new FixedMetadataValue(plugin, arrow.getKnockbackStrength()));
-      //snowball.setMetadata("damage", new FixedMetadataValue(plugin, NmsUtil.getArrowDamage(arrow))); //I'm working on this
+      snowball.setMetadata("damage", new FixedMetadataValue(plugin, NmsUtil.getArrowDamage(arrow)));
       snowball.setMetadata("critical", new FixedMetadataValue(plugin, arrow.isCritical()));
       //And attach another metadata just to recognice this is a custom snowball
       snowball.setMetadata("snowarrow", new FixedMetadataValue(plugin, true));

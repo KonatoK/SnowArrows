@@ -1,5 +1,7 @@
 package com.mandarinacorp.snowarrows;
 
+import com.mandarinacorp.snowarrows.nms.NmsUtil;
+
 import org.bukkit.plugin.java.*;
 
 public class SnowArrows extends JavaPlugin
@@ -7,11 +9,13 @@ public class SnowArrows extends JavaPlugin
 
   @Override
   public void onEnable()
-  { listener.register();
+  { if(NmsUtil.isCompatible())
+      listener.register();
   }
 
   @Override
   public void onDisable()
-  { listener.unregister();
+  { if(NmsUtil.isCompatible())
+      listener.unregister();
   }
 }
